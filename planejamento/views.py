@@ -18,3 +18,8 @@ def update_valor_categoria(request, id):
       return JsonResponse({'status': 'Sucesso'})
     except:
       return JsonResponse({'status': 'Erro'})
+    
+def ver_planejamento(request):
+    categorias = Categoria.objects.all()
+    #TODO: Realizar barra com total
+    return render(request, 'ver_planejamento.html', {'categorias': categorias})
